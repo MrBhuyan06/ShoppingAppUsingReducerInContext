@@ -4,20 +4,23 @@ import Header from "./components/Header.js";
 import Main from "./components/Main.js";
 import "./index.css";
 import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
-import StateProviders from "./context/StateProviders.js";
+import { StateProviders } from "./context/StateProviders.js";
 
-import { initialState } from "./context/initialstate.js";
+import { initial } from "./context/initial.js";
 import { cartReducer } from "./context/reducers.js";
 
 import Cart from "./components/Cart.js";
 const AppLoyout = () => {
   return (
-    // <StateProviders initialstate={initialState} cartReducer={cartReducer}>
     <>
-      <Header />
-      <Outlet />
+      <h1>{console.log("hello")}</h1>
+      <StateProviders>
+        <div>
+          <Header />
+          <Outlet />
+        </div>
+      </StateProviders>
     </>
-    // </StateProviders>
   );
 };
 const appRouter = createBrowserRouter([

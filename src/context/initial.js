@@ -1,6 +1,6 @@
 import { LIST_RES } from "../constant/mockdata.js";
 
-export const initialState = {
+export const initial = {
   res: LIST_RES,
   cart: [],
 };

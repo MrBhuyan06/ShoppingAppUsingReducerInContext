@@ -7,6 +7,7 @@ export const LIST_RES = [
     inStock: 7,
     rating: 3,
     fastDelivery: false,
+    price: 280,
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const LIST_RES = [
     inStock: 3,
     rating: 4,
     fastDelivery: true,
+    price: 120,
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export const LIST_RES = [
     inStock: 0,
     rating: 2,
     fastDelivery: true,
+    price: 280,
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ export const LIST_RES = [
     inStock: 2,
     rating: 4,
     fastDelivery: false,
+    price: 180,
   },
 
   {
@@ -44,6 +48,7 @@ export const LIST_RES = [
     inStock: 0,
     rating: 4,
     fastDelivery: false,
+    price: 160,
   },
   {
     id: 7,
@@ -53,6 +58,7 @@ export const LIST_RES = [
     inStock: 0,
     rating: 3,
     fastDelivery: true,
+    price: 140,
   },
   {
     id: 8,
@@ -62,6 +68,7 @@ export const LIST_RES = [
     inStock: 7,
     rating: 4,
     fastDelivery: false,
+    price: 50,
   },
   {
     id: 9,
@@ -71,6 +78,7 @@ export const LIST_RES = [
     inStock: 0,
     rating: 3,
     fastDelivery: true,
+    price: 180,
   },
   {
     id: 10,
@@ -80,5 +88,6 @@ export const LIST_RES = [
     inStock: 7,
     rating: 3,
     fastDelivery: true,
+    price: 150,
   },
 ];

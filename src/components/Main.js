@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import RestaurentCard from "./RestaurentCard.js";
+import { useStateValue } from "../context/StateProviders.js";
 const Main = () => {
   const [check, setCheck] = useState("");
-
+  console.log(useStateValue());
+  const {
+    state: { res },
+  } = useStateValue();
+  console.log(res);
   return (
     <div className="w-full px-4 relative  flex flex-col items-center md:items-start pt-4   md:flex md:flex-row gap-4 min-h-full mt-24">
       <div
@@ -61,18 +66,9 @@ const Main = () => {
         </div>
       </div>
       <div className="w-[70%] border-2  flex flex-wrap gap-4 justify-center p-4">
-        <RestaurentCard />
-        <RestaurentCard />
-        <RestaurentCard />
-        <RestaurentCard />
-        <RestaurentCard />
-        <RestaurentCard />
-        <RestaurentCard />
-        <RestaurentCard />
-        <RestaurentCard />
-        <RestaurentCard />
-        <RestaurentCard />
-        <RestaurentCard />
+        {res.map((res) => (
+          <RestaurentCard {...res} />
+        ))}
       </div>
     </div>
   );
