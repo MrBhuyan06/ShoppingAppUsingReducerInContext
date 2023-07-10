@@ -1,14 +1,26 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
 const Header = () => {
+  const [searchText, setsearchText] = useState();
   return (
-    <header>
+    <header className="fixed top-0 z-20 w-full">
       <div className=" navbar bg-base-100 px-8 flex justify-between">
         <div className="flex">
-          <a className=" normal-case text-xl">Grap up</a>
+          <Link to={"/"}>
+            <li className=" list-none normal-case text-orange-500 text-xl">
+              Food Court
+            </li>
+          </Link>
         </div>
         <div className="form-control w-1/2 ">
           <input
             type="text"
             placeholder="Search"
+            value={searchText}
+            onChange={(e) => {
+              setsearchText(e.target.value);
+            }}
             className="input input-bordered w-24 md:w-full"
           />
         </div>
@@ -41,9 +53,11 @@ const Header = () => {
                 <span className="font-bold text-lg">8 Items</span>
                 <span className="text-info">Subtotal: $999</span>
                 <div className="card-actions">
-                  <button className="btn btn-primary btn-block">
-                    View cart
-                  </button>
+                  <Link to={"/cart"}>
+                    <button className="btn btn-primary btn-block">
+                      View cart
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
