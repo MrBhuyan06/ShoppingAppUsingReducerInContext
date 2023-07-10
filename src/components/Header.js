@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [searchText, setsearchText] = useState();
+
   return (
     <header className="fixed top-0 z-20 w-full">
       <div className=" navbar bg-base-100 px-8 flex justify-between">
