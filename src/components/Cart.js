@@ -12,6 +12,7 @@ const Cart = () => {
   const [total, setTotal] = useState();
   useEffect(() => {
     setTotal(cart.reduce((acc, curr) => (acc = acc + curr.price), 0));
+    console.log("called");
   }, [cart]);
 
   return (
@@ -28,8 +29,19 @@ const Cart = () => {
               <td className="text-lg font-bold">{c.rating}</td>
               <td>
                 <select
+                  as="select"
                   className="select select-bordered w-full max-w-xs"
                   value={c.qty}
+                  onClick={(e) => {
+                    dispath({
+                      type: actionType.CHANGE_CART_QTY,
+                      payload: {
+                        id: c.id,
+                        qty: e.target.value,
+                      },
+                    });
+                    console.log("Hello");
+                  }}
                 >
                   {[...Array(c.inStock).keys()].map((x) => {
                     return <option key={x + 1}>{x + 1}</option>;
@@ -60,7 +72,7 @@ const Cart = () => {
       </div>
       <div
         data-theme="dark"
-        className=" w-full border-2 md:w-[30%] p-8  rounded-md h-[450px] md:sticky md:top-14"
+        className=" w-full border-2 md:w-[30%] p-8 flex flex-col gap-4  rounded-md h-[450px] md:sticky md:top-14"
       >
         <h1 className="text-4xl">Subtotal({cart.length}) items</h1>
         <span
@@ -69,6 +81,7 @@ const Cart = () => {
         >
           Total {total}
         </span>
+        <button className="btn btn-primary">CheckOut</button>
       </div>
     </div>
   );

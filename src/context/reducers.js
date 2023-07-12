@@ -19,7 +19,7 @@ export const reducer = (state, action) => {
       return {
         ...state,
         cart: state.cart.filter((c) =>
-          c.id === action.payload.id ? (c.qty = action.playload.qty) : c.qty
+          c.id === action.payload.id ? (c.qty = action.payload.qty) : c.qty
         ),
       };
     default:
