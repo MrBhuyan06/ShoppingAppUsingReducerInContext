@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useStateValue } from "../context/StateProviders.js";
 import { AiFillDelete } from "react-icons/ai";
 import { actionType } from "../context/reducers.js";
+
 const Cart = () => {
   const {
     state: { cart },
@@ -25,6 +26,16 @@ const Cart = () => {
               <td className="">{c.tittle}</td>
               <td className="text-lg font-bold">{c.price}</td>
               <td className="text-lg font-bold">{c.rating}</td>
+              <td>
+                <select
+                  className="select select-bordered w-full max-w-xs"
+                  value={c.qty}
+                >
+                  {[...Array(c.inStock).keys()].map((x) => {
+                    return <option key={x + 1}>{x + 1}</option>;
+                  })}
+                </select>
+              </td>
               <td>
                 <button
                   className="className=
