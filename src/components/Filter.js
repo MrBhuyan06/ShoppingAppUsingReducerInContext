@@ -3,9 +3,10 @@ import Rating from "./Rating.js";
 import { useStateValue } from "../context/StateProviders.js";
 const Filter = () => {
   const {
-    productState: { bystock, searchQuery, byRating, byfastDelivery },
+    productState: { bystock, searchQuery, byRating, sort, byfastDelivery },
     productdispatch,
   } = useStateValue();
+  console.log(bystock, searchQuery, byRating, sort, byfastDelivery);
   return (
     <>
       <h3 className="text-center text-2xl p-4 text-white">Filter Restaurent</h3>
@@ -17,6 +18,13 @@ const Filter = () => {
               name="radio-10"
               className="radio checked:bg-blue-500"
               label="ascending"
+              onChange={() => {
+                productdispatch({
+                  type: "SORT_BY_PRICE",
+                  payload: "lowtohigh",
+                });
+              }}
+              checked={sort === "lowtohigh" ? true : false}
             />
             <span className="label-text">Ascending</span>
           </label>
@@ -28,6 +36,13 @@ const Filter = () => {
               name="radio-10"
               className="radio checked:bg-red-500"
               label="descending"
+              onChange={() => {
+                productdispatch({
+                  type: "SORT_BY_PRICE",
+                  payload: "hightolow",
+                });
+              }}
+              checked={sort === "hightolow" ? true : false}
             />
             <span className="label-text">Descending</span>
           </label>
@@ -39,6 +54,12 @@ const Filter = () => {
               type="checkbox"
               label="not Avialbel"
               className="checkbox checkbox-primary"
+              onChange={() => {
+                productdispatch({
+                  type: "FILTER_BY_AVA",
+                });
+              }}
+              checked={bystock}
             />
             <span className="label-text">Not Avilable</span>
           </label>
@@ -50,6 +71,13 @@ const Filter = () => {
               type="checkbox"
               label="fastdelivery"
               className="checkbox checkbox-primary"
+              onChange={() => {
+                productdispatch({
+                  type: "FILTER_BY_DELIVERY",
+                });
+              }}
+              // checked={byfastDelivery}
+              checked={byfastDelivery}
             />
             <span className="label-text">Fast Delivery</span>
           </label>

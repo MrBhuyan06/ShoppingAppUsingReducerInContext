@@ -37,15 +37,15 @@ export const productReducer = (state, action) => {
         ...state,
         sort: action.payload,
       };
-    case "FILTER_BY_STOCK":
+    case "FILTER_BY_AVA":
       return {
         ...state,
-        byStock: !state.byStock,
+        bystock: !state.bystock,
       };
     case "FILTER_BY_DELIVERY":
       return {
         ...state,
-        byFastDelivery: !state.byFastDelivery,
+        byfastDelivery: !state.byfastDelivery,
       };
     case "FILTER_BY_RATING":
       return {
