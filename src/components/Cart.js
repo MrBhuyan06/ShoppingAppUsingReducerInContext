@@ -13,6 +13,7 @@ const Cart = () => {
   useEffect(() => {
     setTotal(cart.reduce((acc, curr) => (acc = acc + curr.price), 0));
     console.log("called");
+    console.log(cart);
   }, [cart]);
 
   return (
@@ -32,7 +33,9 @@ const Cart = () => {
                   as="select"
                   className="select select-bordered w-full max-w-xs"
                   value={c.qty}
-                  onClick={(e) => {
+                  onChange={(e) => {
+                    console.log(e.target.value);
+                    console.log(c.id);
                     dispath({
                       type: actionType.CHANGE_CART_QTY,
                       payload: {
@@ -40,7 +43,6 @@ const Cart = () => {
                         qty: e.target.value,
                       },
                     });
-                    console.log("Hello");
                   }}
                 >
                   {[...Array(c.inStock).keys()].map((x) => {
