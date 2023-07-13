@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import Rating from "./Rating.js";
-
+import { useStateValue } from "../context/StateProviders.js";
 const Filter = () => {
-  const [rate, setRate] = useState();
+  const {
+    productState: { bystock, searchQuery, byRating, byfastDelivery },
+    productdispatch,
+  } = useStateValue();
   return (
     <>
       <h3 className="text-center text-2xl p-4 text-white">Filter Restaurent</h3>
@@ -54,7 +57,15 @@ const Filter = () => {
 
         <div className="rating flex items-center justify-start gap-2">
           <span>Rating</span>
-          <Rating rating={rate} onClick={(i) => setRate(i + 1)} />
+          <Rating
+            rating={byRating}
+            onClick={(i) =>
+              productdispatch({
+                type: "FILTER_BY_RATING",
+                payload: i + 1,
+              })
+            }
+          />
         </div>
 
         <button className="btn btn-primary">Clear Filter</button>
