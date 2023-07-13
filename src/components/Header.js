@@ -15,7 +15,7 @@ const Header = () => {
 
   const [total, setAllTotal] = useState();
   useEffect(() => {
-    setAllTotal(cart.reduce((acc, curr) => (acc = acc + curr.price), 0));
+    setAllTotal(cart.reduce((acc, curr) => acc + curr.price, 0));
   }, [cart]);
   return (
     <header className="fixed top-0 z-20 w-full">
