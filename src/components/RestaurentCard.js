@@ -17,7 +17,7 @@ const RestaurentCard = ({ res }) => {
         <img src={res.cover} alt="Shoes" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">S{res.tittle}</h2>
+        <h2 className="card-title">{res.tittle}</h2>
         <p>Rs{res.price}</p>
 
         <p>{res.fastDelivery}</p>

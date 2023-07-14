@@ -6,7 +6,7 @@ export const LIST_RES = [
       "https://b.zmtcdn.com/data/o2_assets/d0bd7c9405ac87f6aa65e31fe55800941632716575.png",
     inStock: 7,
     rating: 3,
-    fastDelivery: false,
+    fastDelivery: true,
     price: 280,
   },
   {
@@ -57,7 +57,7 @@ export const LIST_RES = [
       "https://b.zmtcdn.com/data/dish_images/c2f22c42f7ba90d81440a88449f4e5891634806087.png",
     inStock: 0,
     rating: 3,
-    fastDelivery: true,
+    fastDelivery: false,
     price: 140,
   },
   {
@@ -77,7 +77,7 @@ export const LIST_RES = [
       "https://b.zmtcdn.com/data/o2_assets/2b5a5b533473aada22015966f668e30e1633434990.png",
     inStock: 0,
     rating: 3,
-    fastDelivery: true,
+    fastDelivery: false,
     price: 180,
   },
   {

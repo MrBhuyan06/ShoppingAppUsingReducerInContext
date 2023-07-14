@@ -6,13 +6,15 @@ import { actionType } from "../context/reducers.js";
 const Header = () => {
   const {
     state: { cart, res },
+    productState: { bystock, searchQuery, byRating, sort, byfastDelivery },
     dispath,
+    productdispatch,
   } = useStateValue();
   console.log(res);
   console.log(cart);
-  const [searchText, setsearchText] = useState();
+  const [searchText, setsearchText] = useState("");
   // const [carts, setCarts] = useState(cart);
-
+  console.log(searchQuery);
   const [total, setAllTotal] = useState();
   useEffect(() => {
     setAllTotal(cart.reduce((acc, curr) => acc + curr.price, 0));
@@ -34,6 +36,10 @@ const Header = () => {
             value={searchText}
             onChange={(e) => {
               setsearchText(e.target.value);
+              productdispatch({
+                type: "FILTER_BY_SEARCH",
+                payload: searchText,
+              });
             }}
             className="input input-bordered w-24 md:w-full"
           />

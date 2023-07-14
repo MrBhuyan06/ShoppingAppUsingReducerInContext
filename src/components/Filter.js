@@ -26,7 +26,7 @@ const Filter = () => {
               }}
               checked={sort === "lowtohigh" ? true : false}
             />
-            <span className="label-text">Ascending</span>
+            <span className="label-text">Low To High</span>
           </label>
         </div>
         <div className="form-control   ">
@@ -44,7 +44,7 @@ const Filter = () => {
               }}
               checked={sort === "hightolow" ? true : false}
             />
-            <span className="label-text">Descending</span>
+            <span className="label-text">High To Low</span>
           </label>
         </div>
 
@@ -96,7 +96,16 @@ const Filter = () => {
           />
         </div>
 
-        <button className="btn btn-primary">Clear Filter</button>
+        <button
+          className="btn btn-primary"
+          onClick={() =>
+            productdispatch({
+              type: "CLEAR_FILTER",
+            })
+          }
+        >
+          Clear Filter
+        </button>
       </div>
     </>
   );
