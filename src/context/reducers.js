@@ -4,6 +4,8 @@ export const actionType = {
   CHANGE_CART_QTY: "CHANGE_CART_QTY",
 };
 export const reducer = (state, action) => {
+  console.log("state", { state });
+  console.log(action);
   switch (action.type) {
     case actionType.ADD_CART:
       return {

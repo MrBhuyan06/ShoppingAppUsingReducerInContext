@@ -10,11 +10,11 @@ const Header = () => {
     dispath,
     productdispatch,
   } = useStateValue();
-  console.log(res);
-  console.log(cart);
+  // console.log(res);
+  // console.log(cart);
   const [searchText, setsearchText] = useState("");
   // const [carts, setCarts] = useState(cart);
-  console.log(searchQuery);
+  // console.log(searchQuery);
   const [total, setAllTotal] = useState();
   useEffect(() => {
     setAllTotal(cart.reduce((acc, curr) => acc + curr.price, 0));

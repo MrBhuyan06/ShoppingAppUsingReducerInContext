@@ -8,9 +8,9 @@ const RestaurentCard = ({ res }) => {
     state: { cart },
     dispath,
   } = useStateValue();
-  console.log(useStateValue());
-  console.log(cart, dispath);
-  console.log(res);
+  // console.log(useStateValue());
+  // console.log(cart, dispath);
+  // console.log(res);
   return (
     <div className="card w-80 bg-base-100 shadow-xl hover:scale-105   transition-all ease-in-out">
       <figure className="w-40 mx-auto">

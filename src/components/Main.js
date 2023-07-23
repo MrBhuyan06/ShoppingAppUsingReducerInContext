@@ -4,13 +4,13 @@ import { useStateValue } from "../context/StateProviders.js";
 import Filter from "./Filter.js";
 const Main = () => {
   const [check, setCheck] = useState("");
-  console.log(useStateValue());
+  // console.log(useStateValue());
   const {
     state: { res },
     productState: { bystock, searchQuery, byRating, sort, byfastDelivery },
   } = useStateValue();
-  console.log(byRating);
-  console.log(searchQuery);
+  // console.log(byRating);
+  // console.log(searchQuery);
   const filterProduct = () => {
     let sortedProdut = res;
     if (sort) {

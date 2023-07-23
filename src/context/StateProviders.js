@@ -6,6 +6,7 @@ const Carts = createContext();
 console.log(Carts);
 export const StateProviders = ({ children }) => {
   const [state, dispath] = useReducer(reducer, initial);
+  console.log(useReducer(reducer, initial));
   const [productState, productdispatch] = useReducer(productReducer, {
     bystock: false,
     byfastDelivery: false,
